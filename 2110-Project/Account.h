@@ -8,5 +8,9 @@ using namespace std; // So "std::cout" may be abbreviated to "cout"
 
 class Account 
 {
-
+private:
+	float balace;
+public:
+	float getBalance() const;
+	void deposit(float amount);
 };
