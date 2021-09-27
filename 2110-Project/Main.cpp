@@ -26,6 +26,8 @@ int main()
 	//string s;
 	//char c;
 
+	//Test commit from clones area
+
 	// Show application header
 	cout << "Welcome to my Application!" << endl;
 	cout << "--------------------------" << endl << endl;
