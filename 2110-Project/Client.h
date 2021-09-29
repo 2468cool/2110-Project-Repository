@@ -14,7 +14,7 @@ private:
 	string firstName;
 	string lastName;
 public:
-	CheckingAccount checking;
+	CheckingAccount *checking;
 	// SavingAccount saving;
 	void setID(int i);
 	int getID() const;
