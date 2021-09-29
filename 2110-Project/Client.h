@@ -4,6 +4,7 @@
 #include <iomanip> // For formatted output
 #include <iostream> // For cin, cout, and system
 #include <string> // For string data type
+#include "CheckingAccount.h"
 using namespace std; // So "std::cout" may be abbreviated to "cout"
 
 class Client 
@@ -13,7 +14,7 @@ private:
 	string firstName;
 	string lastName;
 public:
-	// CheckingAccount checking;
+	CheckingAccount checking;
 	// SavingAccount saving;
 	void setID(int i);
 	int getID() const;
