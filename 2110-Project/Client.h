@@ -23,5 +23,6 @@ public:
 	void setName(std::string fn, std::string ln);
 	std::string getFirstName() const;
 	std::string getLastName() const;
+	Client();
 	Client(std::string i, std::string fn, std::string ln);
 };

@@ -5,6 +5,7 @@
 #include <iostream> // For cin, cout, and system
 #include <string> // For string data type
 #include "Account.h"
+using namespace std;
 
 // Checking Account class header.
 // Functions initialize and withdraw from Account balance variable

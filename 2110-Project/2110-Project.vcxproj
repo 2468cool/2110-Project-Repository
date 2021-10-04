@@ -140,12 +140,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
+    <ClCompile Include="BankSystem.cpp" />
     <ClCompile Include="CheckingAccount.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="BankSystem.h" />
     <ClInclude Include="CheckingAccount.h" />
     <ClInclude Include="Client.h" />
   </ItemGroup>
