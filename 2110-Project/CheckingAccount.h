@@ -6,8 +6,10 @@
 #include <string> // For string data type
 #include "Account.h"
 
+// Checking Account class header.
+// Functions initialize and withdraw from Account balance variable
 class CheckingAccount : public Account
 {
-	void withdraw(float ammount);
+	void withdraw(float amount);
 	CheckingAccount(float amount);
 };

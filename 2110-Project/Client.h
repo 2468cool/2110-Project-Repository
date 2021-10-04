@@ -7,6 +7,8 @@
 #include "CheckingAccount.h"
 using namespace std; // So "std::cout" may be abbreviated to "cout"
 
+// Client header. Makes a client class that draws from both the
+// CheckingAccount and SavingAccount classes.
 class Client 
 {
 private:
