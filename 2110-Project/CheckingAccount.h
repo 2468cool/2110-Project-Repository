@@ -10,6 +10,7 @@
 // Functions initialize and withdraw from Account balance variable
 class CheckingAccount : public Account
 {
+public:
 	void withdraw(float amount);
 	CheckingAccount(float amount);
 };

@@ -13,15 +13,15 @@ class Client
 {
 private:
 	int id;
-	string firstName;
-	string lastName;
+	std::string firstName;
+	std::string lastName;
 public:
 	CheckingAccount *checking;
-	// SavingAccount saving;
+	// SavingAccount *saving;
 	void setID(int i);
 	int getID() const;
-	void setName(string fn, string ln);
-	string getFirstName() const;
-	string getLastName() const;
-	Client(string i, string gn, string ln);
+	void setName(std::string fn, std::string ln);
+	std::string getFirstName() const;
+	std::string getLastName() const;
+	Client(std::string i, std::string fn, std::string ln);
 };
