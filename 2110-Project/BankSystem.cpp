@@ -6,49 +6,73 @@
 #include "BankSystem.h"
 using namespace std;
 
-// My guess is that this initializes the CheckingAccount object from the Client class
+// These functions rely on the fact that SavingAccount and
+// CheckingAccount are both pointers within the Cient class.
+// 
+// All of these functions have something written to the 'log' variable
+// but I dont know how to make that variable and use it yet
+
+
+// If the pointer for Checking account is not initialized, have the pointer
+// point to a new address.
+// If the pointer already points to something, tell the user that an account has already been made
+// and return to menu
 void AddCheckingDialog()
 {
 
 }
 
-// My guess is that this deletes the CheckingAccount object from the Client class
+// Deletes the CheckingAccount object
+// If none exists, tell the user no account currently exists and return to menu
 void RemoveCheckingDialog()
 {
 
 }
 
-// Likely just deposits money to checking account
+// Asks user how much they would like to deposit into the account.
+// Deposit into the Checking Account.
+// If the account does not exist, tell the user no account exists and return to menu
 void DepositCheckingDialog()
 {
 
 }
 
-// Likely just withdraws money from checking account
+// Ask the user how much they want to withdraw, make sure that it does not go below zero.
+// Withdraw that much money from Checking Account.
+// If the account does not exist, tell the user no account exists and return to menu
 void WithdrawCheckingDialog()
 {
 
 }
 
-// My guess is that this initializes the SavingAccount object from the Client class
+// If the pointer for Saving account is not initialized, have the pointer
+// point to a new address.
+// If the pointer already points to something, tell the user that an account has already been made
+// and return to menu
 void AddSavingDialog()
 {
 
 }
 
-// My guess is that this deletes the SavingAccount object from the Client class
+// Deletes the SavingAccount object
+// If none exists, tell the user no account currently exists and return to menu
 void RemoveSavingDialog()
 {
 
 }
 
-// Likely just adds money to checking account
+// Asks user how much they would like to deposit into the account.
+// Deposit into the Saving Account.
+// If the account does not exist, tell the user no account exists and return to menu
 void DepositSavingDialog()
 {
 
 }
 
-// Likely just moves money from Saving object to Checking object
+// Ask the user how much they want to withdraw, make sure that it does not go below zero.
+// Withdraw that much money from Saving account and move it into the Checking Account.
+// If neither account exists, tell the user that account does not exist and return to menu
+// Check saving account first, then check Checking Account
 void TransferDialog()
 {
 
@@ -67,7 +91,21 @@ void start()
 		cout << "Choose an option[1-9]: ";
 		cin >> option;
 
-		// Switch/if statements go here
+		switch (option)
+		{
+		case 1:
+			AddCheckingDialog();
+		case 2:
+			RemoveCheckingDialog();
+		case 3:
+			DepositCheckingDialog();
+		case 4:
+			// case 4's option
+		// rest of switch statement for whole menu goes here
+		default: // Unsure if default is actually needed
+			break;
+		}
+
 	}
 }
 

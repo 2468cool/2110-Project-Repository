@@ -11,10 +11,13 @@ class BankSystem
 {
 private:
 	// Unsure what a vector<std::string> is suppose to be yet
+	// Appears to have strings written to it every time the user
+	// user the menu.
 	//vector<std::string> log;
 	Client oneClient;
 
-	// Assignment does not say what these do so not fully sure to their purpose yet
+	// Assignment has detailed descriptions for each of these
+	// Putting comments on basic gist of each in .cpp file
 	void AddCheckingDialog();
 	void RemoveCheckingDialog();
 	void DepositCheckingDialog();
