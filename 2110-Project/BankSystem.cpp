@@ -6,56 +6,56 @@
 #include "BankSystem.h"
 using namespace std;
 
-//
+// My guess is that this initializes the CheckingAccount object from the Client class
 void AddCheckingDialog()
 {
 
 }
 
-//
+// My guess is that this deletes the CheckingAccount object from the Client class
 void RemoveCheckingDialog()
 {
 
 }
 
-//
+// Likely just deposits money to checking account
 void DepositCheckingDialog()
 {
 
 }
 
-//
+// Likely just withdraws money from checking account
 void WithdrawCheckingDialog()
 {
 
 }
 
-//
+// My guess is that this initializes the SavingAccount object from the Client class
 void AddSavingDialog()
 {
 
 }
 
-//
+// My guess is that this deletes the SavingAccount object from the Client class
 void RemoveSavingDialog()
 {
 
 }
 
-//
+// Likely just adds money to checking account
 void DepositSavingDialog()
 {
 
 }
 
-//
+// Likely just moves money from Saving object to Checking object
 void TransferDialog()
 {
 
 }
 
 // While loop to access all functions
-// Might be best to use switch statements to loop menu
+// Might be best to use switch statements to activate an option
 void start()
 {
 	int option = 0;

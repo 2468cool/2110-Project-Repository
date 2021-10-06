@@ -14,7 +14,7 @@ void Client::setID(int i)
 
 /*
 // Returns the id of the client
-int getID() const
+int Client::getID() const
 {
 	
 }
@@ -28,19 +28,19 @@ void Client::setName(std::string fn, std::string ln)
 
 /*
 // Returns the first name of the client
-string getFirstName() const
+string Client::getFirstName() const
 {
 	
 }
 
 // returns the last name of the client
-string getLastName() const
+string Client::getLastName() const
 {
 
 }
 */
 
-//Default constructor to fix an error temporaritly
+//Default constructor to fix an error temporarily, unless this is the only way to make it work
 Client::Client()
 {
 

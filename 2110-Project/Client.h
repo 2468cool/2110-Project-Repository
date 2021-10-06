@@ -5,6 +5,7 @@
 #include <iostream> // For cin, cout, and system
 #include <string> // For string data type
 #include "CheckingAccount.h"
+#include "SavingAccount.h"
 using namespace std; // So "std::cout" may be abbreviated to "cout"
 
 // Client header. Makes a client class that draws from both the
@@ -17,7 +18,7 @@ private:
 	std::string lastName;
 public:
 	CheckingAccount *checking;
-	// SavingAccount *saving;
+	SavingAccount *saving;
 	void setID(int i);
 	int getID() const;
 	void setName(std::string fn, std::string ln);
