@@ -3,20 +3,21 @@
 #include <iomanip> // For formatted output
 #include <iostream> // For cin, cout, and system
 #include <string> // For string data type
+#include <vector> // Allows the use of the 'log'variable
 #include "BankSystem.h"
 using namespace std;
 
 // These functions rely on the fact that SavingAccount and
 // CheckingAccount are both pointers within the Cient class.
 // 
-// All of these functions have something written to the 'log' variable
-// but I dont know how to make that variable and use it yet
+// Everything you write to the log, use 
+//log.push_back("<message here");
 
 
 // If the pointer for Checking account is not initialized, have the pointer
-// point to a new address.
+// point to a new address. Write to log
 // If the pointer already points to something, tell the user that an account has already been made
-// and return to menu
+// and return to menu. Write to log
 void BankSystem::AddCheckingDialog()
 {
 
@@ -30,40 +31,43 @@ void BankSystem::RemoveCheckingDialog()
 }
 
 // Asks user how much they would like to deposit into the account.
-// Deposit into the Checking Account.
-// If the account does not exist, tell the user no account exists and return to menu
+// Deposit into the Checking Account. Write to log
+// If the account does not exist, tell the user no account exists and return to menu.
+// Write to log
 void BankSystem::DepositCheckingDialog()
 {
 
 }
 
 // Ask the user how much they want to withdraw, make sure that it does not go below zero.
-// Withdraw that much money from Checking Account.
-// If the account does not exist, tell the user no account exists and return to menu
+// Withdraw that much money from Checking Account. Write to log
+// If the account does not exist, tell the user no account exists and return to menu.
+// Write to log
 void BankSystem::WithdrawCheckingDialog()
 {
 
 }
 
 // If the pointer for Saving account is not initialized, have the pointer
-// point to a new address.
+// point to a new address. Write to log
 // If the pointer already points to something, tell the user that an account has already been made
-// and return to menu
+// and return to menu. Write to log
 void BankSystem::AddSavingDialog()
 {
 
 }
 
-// Deletes the SavingAccount object
-// If none exists, tell the user no account currently exists and return to menu
+// Deletes the SavingAccount object. Write to log
+// If none exists, tell the user no account currently exists and return to menu. Write to log
 void BankSystem::RemoveSavingDialog()
 {
 
 }
 
 // Asks user how much they would like to deposit into the account.
-// Deposit into the Saving Account.
-// If the account does not exist, tell the user no account exists and return to menu
+// Deposit into the Saving Account. Write to log
+// If the account does not exist, tell the user no account exists and return to menu.
+// Write to log
 void BankSystem::DepositSavingDialog()
 {
 
@@ -71,7 +75,9 @@ void BankSystem::DepositSavingDialog()
 
 // Ask the user how much they want to withdraw, make sure that it does not go below zero.
 // Withdraw that much money from Saving account and move it into the Checking Account.
-// If neither account exists, tell the user that account does not exist and return to menu
+// Write to log
+// If neither account exists, tell the user that account does not exist and return to menu.
+// Write to log
 // Check saving account first, then check Checking Account
 void BankSystem::TransferDialog()
 {

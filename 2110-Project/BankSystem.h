@@ -4,16 +4,15 @@
 #include <iomanip> // For formatted output
 #include <iostream> // For cin, cout, and system
 #include <string> // For string data type
+#include <vector> // Allows the use of the 'log'variable
 #include "Client.h"
 using namespace std;
 
 class BankSystem
 {
 private:
-	// Unsure what a vector<std::string> is suppose to be yet
-	// Appears to have strings written to it every time the user
-	// user the menu.
-	//vector<std::string> log;
+	// Now able to use the vector variable
+	std::vector<std::string> log;
 	Client oneClient;
 
 	// Assignment has detailed descriptions for each of these
