@@ -12,7 +12,7 @@ using namespace std; // So "std::cout" may be abbreviated to "cout"
 // balance dip below zero
 void CheckingAccount::withdraw(float amount)
 {
-    balance = amount - getBalance();
+    balance = getBalance() - amount;
 }
 
 // Initializes blanace with the amount it takes in
