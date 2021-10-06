@@ -17,14 +17,14 @@ using namespace std;
 // point to a new address.
 // If the pointer already points to something, tell the user that an account has already been made
 // and return to menu
-void AddCheckingDialog()
+void BankSystem::AddCheckingDialog()
 {
 
 }
 
 // Deletes the CheckingAccount object
 // If none exists, tell the user no account currently exists and return to menu
-void RemoveCheckingDialog()
+void BankSystem::RemoveCheckingDialog()
 {
 
 }
@@ -32,7 +32,7 @@ void RemoveCheckingDialog()
 // Asks user how much they would like to deposit into the account.
 // Deposit into the Checking Account.
 // If the account does not exist, tell the user no account exists and return to menu
-void DepositCheckingDialog()
+void BankSystem::DepositCheckingDialog()
 {
 
 }
@@ -40,7 +40,7 @@ void DepositCheckingDialog()
 // Ask the user how much they want to withdraw, make sure that it does not go below zero.
 // Withdraw that much money from Checking Account.
 // If the account does not exist, tell the user no account exists and return to menu
-void WithdrawCheckingDialog()
+void BankSystem::WithdrawCheckingDialog()
 {
 
 }
@@ -49,14 +49,14 @@ void WithdrawCheckingDialog()
 // point to a new address.
 // If the pointer already points to something, tell the user that an account has already been made
 // and return to menu
-void AddSavingDialog()
+void BankSystem::AddSavingDialog()
 {
 
 }
 
 // Deletes the SavingAccount object
 // If none exists, tell the user no account currently exists and return to menu
-void RemoveSavingDialog()
+void BankSystem::RemoveSavingDialog()
 {
 
 }
@@ -64,7 +64,7 @@ void RemoveSavingDialog()
 // Asks user how much they would like to deposit into the account.
 // Deposit into the Saving Account.
 // If the account does not exist, tell the user no account exists and return to menu
-void DepositSavingDialog()
+void BankSystem::DepositSavingDialog()
 {
 
 }
@@ -73,14 +73,14 @@ void DepositSavingDialog()
 // Withdraw that much money from Saving account and move it into the Checking Account.
 // If neither account exists, tell the user that account does not exist and return to menu
 // Check saving account first, then check Checking Account
-void TransferDialog()
+void BankSystem::TransferDialog()
 {
 
 }
 
 // While loop to access all functions
 // Might be best to use switch statements to activate an option
-void start()
+void BankSystem::start()
 {
 	int option = 0;
 	while (option !=9)
