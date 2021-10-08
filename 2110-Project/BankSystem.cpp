@@ -7,6 +7,8 @@
 #include "BankSystem.h"
 using namespace std;
 
+// initial commit - dreamzweaver
+// 
 // These functions rely on the fact that SavingAccount and
 // CheckingAccount are both pointers within the Cient class.
 // 
