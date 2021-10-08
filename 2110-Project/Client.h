@@ -18,8 +18,8 @@ private:
 	std::string firstName;
 	std::string lastName;
 public:
-	CheckingAccount *checking;
-	SavingAccount *saving;
+	CheckingAccount *checking = nullptr;
+	SavingAccount *saving = nullptr;
 	void setID(int i);
 	int getID() const;
 	void setName(std::string fn, std::string ln);

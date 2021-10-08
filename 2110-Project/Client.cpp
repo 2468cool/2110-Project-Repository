@@ -46,6 +46,7 @@ Client::Client()
 {
 
 }
+
 // Sets the id and name of client
 Client::Client(std::string i, std::string fn, std::string ln)
 {

@@ -13,7 +13,7 @@ using namespace std;
 // CheckingAccount are both pointers within the Cient class.
 // 
 // Everything you write to the log, use 
-//log.push_back("<message here");
+// log.push_back("<message here>");
 
 
 // If the pointer for Checking account is not initialized, have the pointer
@@ -22,7 +22,21 @@ using namespace std;
 // and return to menu. Write to log
 void BankSystem::AddCheckingDialog()
 {
-
+	if (oneClient.checking != nullptr)
+	{
+		cout << "The client already has a checking account." << endl;
+		log.push_back("Invalid attempt to overwrite a checking account.");
+		start();
+	}
+	else
+	{
+		int amm;
+		cout << "Please enter a starting balance: ";
+		cin >> amm;
+		oneClient.checking = new CheckingAccount(amm);
+		log.push_back("Checking account successfuly created");
+		start();
+	}
 }
 
 // Deletes the CheckingAccount object
@@ -56,7 +70,24 @@ void BankSystem::WithdrawCheckingDialog()
 // and return to menu. Write to log
 void BankSystem::AddSavingDialog()
 {
-
+	if (oneClient.saving != nullptr)
+	{
+		cout << "The client already has a saving account." << endl;
+		log.push_back("Invalid attempt to overwrite a saving account.");
+		start();
+	}
+	else
+	{
+		int amm;
+		int rate;
+		cout << "Please enter a starting balance: ";
+		cin >> amm;
+		cout << "Please enter a savings rate: ";
+		cin >> rate;
+		oneClient.saving = new SavingAccount(amm, rate);
+		log.push_back("Saving account successfuly created");
+		start();
+	}
 }
 
 // Deletes the SavingAccount object. Write to log

@@ -12,7 +12,16 @@ using namespace std; // So "std::cout" may be abbreviated to "cout"
 // balance dip below zero
 void CheckingAccount::withdraw(float amount)
 {
-    balance = getBalance() - amount;
+	if ((balance - amount) < 0)
+	{
+		cout << "This action cannot be performed. Action would result in negative balance."
+			<< endl;
+	}
+	else
+	{
+		balance = getBalance() - amount;
+	}
+    
 }
 
 // Initializes blanace with the amount it takes in

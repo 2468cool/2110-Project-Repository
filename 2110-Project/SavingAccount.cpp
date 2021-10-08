@@ -25,7 +25,15 @@ float SavingAccount::getSavingRate() const
 // Make sure amount cannot go below zero
 void SavingAccount::transfer(CheckingAccount& checkingAcc, float amount)
 {
-
+	if ((balance - amount) < 0)
+	{
+		cout << "This action cannot be performed. Balance would go below zero." << endl;
+	}
+	else
+	{
+		balance = balance - amount;
+		checkingAcc.deposit(amount);
+	}
 }
 
 // Initializes balance for account and rate of saving
