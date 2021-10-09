@@ -41,7 +41,18 @@ void BankSystem::AddCheckingDialog()
 // If none exists, tell the user no account currently exists and return to menu
 void BankSystem::RemoveCheckingDialog()
 {
-
+	if (oneClient.checking != nullptr)
+	{
+		log.push_back("The client does not have a checking account.");
+		oneClient.checking = nullptr;
+		start();
+	}
+	else
+	{
+		log.push_back("Invalid attempts to remove a non-existing checking account.");
+		start();
+	}
+	
 }
 
 // Asks user how much they would like to deposit into the account.
@@ -50,7 +61,20 @@ void BankSystem::RemoveCheckingDialog()
 // Write to log
 void BankSystem::DepositCheckingDialog()
 {
-
+	if (oneClient.checking!= nullptr)
+	{
+		double amount;
+		cout << "How much would you like to deposit?: ";
+		cin >> amount;
+		oneClient.checking->deposit(amount);
+		log.push_back("$[amount] successfully deposited in checking account.");
+		start();
+	}
+	else
+	{
+		log.push_back("Invalid attempt to deposit non-exisiting checking account.");
+		start();
+	}
 }
 
 // Ask the user how much they want to withdraw, make sure that it does not go below zero.
@@ -59,7 +83,20 @@ void BankSystem::DepositCheckingDialog()
 // Write to log
 void BankSystem::WithdrawCheckingDialog()
 {
-
+	if (oneClient.checking!= nullptr)
+	{
+		double amount;
+		cout << "How much would you like to deposit?: ";
+		cin >> amount;
+		oneClient.checking->withdraw(amount);
+		log.push_back("$[amount] successfully withdrawn from checking account.");
+		start();
+	}
+	else
+	{
+		log.push_back("Invalid attempt to withdraw from a non-exisiting checking account.");
+		start();
+	}
 }
 
 // If the pointer for Saving account is not initialized, have the pointer
@@ -92,7 +129,17 @@ void BankSystem::AddSavingDialog()
 // If none exists, tell the user no account currently exists and return to menu. Write to log
 void BankSystem::RemoveSavingDialog()
 {
-
+	if (oneClient.saving != nullptr)
+	{
+		log.push_back("The client does not have a saving account.");
+		oneClient.saving = nullptr;
+		start();
+	}
+	else
+	{
+		log.push_back("Invalid attempts to remove a non-existing saving account.");
+		start();
+	}
 }
 
 // Asks user how much they would like to deposit into the account.
@@ -101,7 +148,23 @@ void BankSystem::RemoveSavingDialog()
 // Write to log
 void BankSystem::DepositSavingDialog()
 {
-
+	if (oneClient.saving != nullptr)
+	{
+		double amount;
+		cout << "How much would you like to deposit?: ";
+		cin >> amount;
+		oneClient.saving->deposit(amount);
+		//fix 146 to make amount work properly
+		//make [amount] display actual number;
+		log.push_back("$[amount] successfully deposited in saving account." );
+		start();
+	}
+	else
+	{
+		log.push_back("The client does not have a saving account");
+		start();
+	}
+	
 }
 
 // Ask the user how much they want to withdraw, make sure that it does not go below zero.
@@ -112,7 +175,11 @@ void BankSystem::DepositSavingDialog()
 // Check saving account first, then check Checking Account
 void BankSystem::TransferDialog()
 {
-
+	if (/* condition */)
+	{
+		/* code */
+	}
+	
 }
 
 // While loop to access all functions
