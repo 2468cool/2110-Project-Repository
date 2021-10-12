@@ -10,14 +10,14 @@ using namespace std;
 // Sets the rate for saving
 void SavingAccount::setSavingRate(float amount)
 {
-
+	savingRate = amount;
 }
 
 // Returns the rate
 /*
 float SavingAccount::getSavingRate() const
 {
-
+	return savingRate;
 }
 */
 
@@ -39,5 +39,6 @@ void SavingAccount::transfer(CheckingAccount& checkingAcc, float amount)
 // Initializes balance for account and rate of saving
 SavingAccount::SavingAccount(float amount, float rate)
 {
-
+	balance = amount;
+	savingRate = rate;
 }
