@@ -19,8 +19,8 @@ float SavingAccount::getSavingRate() const
 	return savingRate;
 }
 
+// Balance cannot go below 0
 // Moves the 'amount' from saving account to checking account
-// Make sure amount cannot go below zero
 void SavingAccount::transfer(CheckingAccount& checkingAcc, float amount)
 {
 	if ((balance - amount) < 0)
