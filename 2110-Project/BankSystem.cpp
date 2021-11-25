@@ -175,11 +175,30 @@ void BankSystem::DepositSavingDialog()
 // Check saving account first, then check Checking Account
 void BankSystem::TransferDialog()
 {
-	if (/* condition */)
+	if (oneClient.saving == nullptr)
 	{
-		/* code */
+		cout << "The client does not have a saving account." << endl;
+		log.push_back("Invalid attempt to use a non-existing saving account.");
+		start();
 	}
-	
+	else if (oneClient.checking == nullptr)
+	{
+		cout << "The client does not have a saving account." << endl;
+		log.push_back("Invalid attempt to use a non-existing checking account.");
+		start();
+	}
+	else
+	{
+		double amount;
+		cout<<"Enter an amount to transfer: ";
+		cin>>amount;
+		
+		oneClient.saving->withdraw(amount);
+		oneClient.checking->deposiut(amount);
+		log.push_back("$[amount] successfully transferred from saving to checking account." );
+		start();
+		
+	}
 }
 
 // While loop to access all functions
@@ -190,7 +209,16 @@ void BankSystem::start()
 	while (option !=9)
 	{
 		cout << "=Menu=" << endl;
-		// Rest of menu goes here
+		cout<<"1. Add a Checking Account"<<endl;
+		cout<<"2. Remove checking Account"<<endl;
+		cout<<"3. Deposit into Checking Account"<<endl;
+		cout<<"4. Withdraw from Checking Account"<<endl;
+		cout<<"5. Add a Saving Account"<<endl;
+		cout<<"6. Remove Saving Account<<endl;
+		cout<<"7. Deposit into Saving Account"<<endl;
+		cout<<"8. Transfer from Saving to Checking Account"<<endl;
+		cout<<"9. Exit"<<endl;
+		
 
 		cout << "Choose an option[1-9]: ";
 		cin >> option;
@@ -204,17 +232,29 @@ void BankSystem::start()
 		case 3:
 			DepositCheckingDialog();
 		case 4:
-			// case 4's option
-		// rest of switch statement for whole menu goes here
-		default: // Unsure if default is actually needed
+			WithdrawChecking Dialog();
+		case 5:
+			AddSavingDialog();
+		case 6:
+			RemoveSavingDialog();
+		case 7:
+			DepositSavingDialog();
+		case 8:
+			TransferDialog();
+		case 9:
+			exit(-99);
+				
+		default: 
+			cout<<" Invalid Choice";
 			break;
 		}
 
 	}
 }
 
-// Likely makes the Client class have an id and first and last name
+//Double check to make sure I did this correctly. Thanks.
 BankSystem::BankSystem(std::string i, std::string fn, std::string ln)
 {
-
+	setID(stoi(i));
+	setName(fn,ln);
 }
