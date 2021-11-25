@@ -211,11 +211,11 @@ void BankSystem::start()
 		cout << "=Menu=" << endl;
 		cout<<"1. Add a Checking Account"<<endl;
 		cout<<"2. Remove checking Account"<<endl;
-		cout<<"3. Deposit into Checking Account"<<endl;
-		cout<<"4. Withdraw from Checking Account"<<endl;
-		cout<<"5. Add a Saving Account"<<endl;
-		cout<<"6. Remove Saving Account<<endl;
-		cout<<"7. Deposit into Saving Account"<<endl;
+		cout<<"3. Deposit into Checking Account" <<endl;
+		cout<<"4. Withdraw from Checking Account" <<endl;
+		cout<<"5. Add a Saving Account" <<endl;
+		cout<<"6. Remove Saving Account" <<endl;
+		cout<<"7. Deposit into Saving Account" <<endl;
 		cout<<"8. Transfer from Saving to Checking Account"<<endl;
 		cout<<"9. Exit"<<endl;
 		
