@@ -8,18 +8,16 @@
 using namespace std;
 
 // Sets the rate for saving
-void SavingAccount::setSavingRate(float amount)
+void SavingAccount::setSavingRate(float rate)
 {
-	savingRate = amount;
+	savingRate = rate;
 }
 
 // Returns the rate
-/*
 float SavingAccount::getSavingRate() const
 {
 	return savingRate;
 }
-*/
 
 // Moves the 'amount' from saving account to checking account
 // Make sure amount cannot go below zero
