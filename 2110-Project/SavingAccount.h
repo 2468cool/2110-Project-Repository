@@ -13,11 +13,9 @@ class SavingAccount : public Account
 {
 private:
 	float savingRate;
-
 public:
 	void setSavingRate(float rate);
 	float getSavingRate() const;
 	void transfer(CheckingAccount& checkingAcc, float amount);
 	SavingAccount(float amount, float rate);
-
 };
