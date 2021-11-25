@@ -232,7 +232,7 @@ void BankSystem::start()
 		case 3:
 			DepositCheckingDialog();
 		case 4:
-			WithdrawChecking Dialog();
+			WithdrawCheckingDialog();
 		case 5:
 			AddSavingDialog();
 		case 6:
