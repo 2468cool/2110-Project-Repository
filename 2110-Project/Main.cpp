@@ -53,5 +53,19 @@ int main()
 
 	// Show application close
 	cout << "\nEnd of my Application" << endl;
+	
+	string,id,fn,ln;
+	cout<<"Enter your bank ID: ";
+	cin>>id;
+	
+	cout<<endl<<"Enter your first name: ";
+	cin>>fn;
+	
+	cout<<endl<<"Enter your last name: ";
+	cin>>ln;
+	cout<<endl<<endl;
+	
+	BankSystem acc1("123","Billy","Joe");
+	acc1.start();
 
 }
