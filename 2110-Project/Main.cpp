@@ -54,6 +54,8 @@ int main()
 	// Show application close
 	cout << "\nEnd of my Application" << endl;
 	
+	//Creates a bankSystem object named acc1 which aks for user input(id,first,last)
+	//then it executes the start function
 	string,id,fn,ln;
 	cout<<"Enter your bank ID: ";
 	cin>>id;
