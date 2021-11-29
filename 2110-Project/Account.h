@@ -13,6 +13,6 @@ class Account
 protected:
 	float balance;
 public:
-	virtual float getBalance() const;
-	virtual void deposit(float amount);
+	virtual float getBalance() const==0;
+	virtual void deposit(float amount)==0;
 };
