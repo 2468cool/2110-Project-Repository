@@ -10,6 +10,7 @@ using namespace std; // So "std::cout" may be abbreviated to "cout"
 // Decreases balance with parameter function takes in
 // Make sure that the amount of money being taken does not let the
 // balance dip below zero
+
 void CheckingAccount::withdraw(float amount)
 {
 	if ((balance - amount) < 0)
@@ -28,4 +29,14 @@ void CheckingAccount::withdraw(float amount)
 CheckingAccount::CheckingAccount(float amount)
 {
     balance = amount;
+}
+
+float Account::getBalance() const
+{
+	return balance;
+}
+
+void Account::deposit(float amount)
+{
+	balance = balance + amount;
 }
