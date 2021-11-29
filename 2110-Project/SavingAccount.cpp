@@ -40,3 +40,13 @@ SavingAccount::SavingAccount(float amount, float rate)
 	balance = amount;
 	savingRate = rate;
 }
+
+float Account::getBalance() const
+{
+	return balance;
+}
+
+void Account::deposit(float amount)
+{
+	balance = balance + amount;
+}
