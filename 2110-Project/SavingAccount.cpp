@@ -23,14 +23,24 @@ float SavingAccount::getSavingRate() const
 // Moves the 'amount' from saving account to checking account
 void SavingAccount::transfer(CheckingAccount& checkingAcc, float amount)
 {
-	if ((balance - amount) < 0)
-	{
-		cout << "This action cannot be performed. Balance would go below zero." << endl;
+	string errorMessage = "It cannot withdraw an amount greater than the balance. No changes were done to the balance.";
+
+	try {
+		if (amount > balance) {
+			throw errorMessage;
+		}
+		 else if ((balance - amount) < 0)
+		{
+			cout << "This action cannot be performed. Balance would go below zero." << endl;
+		}
+		else
+		{
+			balance = balance - amount;
+			checkingAcc.deposit(amount);
+		}
 	}
-	else
-	{
-		balance = balance - amount;
-		checkingAcc.deposit(amount);
+	catch (float amt) {
+		cout << "Transfer amount " << amt << " is greater than the account balance of " << balance;
 	}
 }
 
