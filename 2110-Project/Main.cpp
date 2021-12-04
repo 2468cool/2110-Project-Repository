@@ -28,7 +28,7 @@ int main()
 	//string s;
 	//char c;
 
-	//masudur
+	//masudur test dec 4
 
 	//Test commit from clones area
 	// Post-Privatization test commit
@@ -56,7 +56,7 @@ int main()
 	
 	//Creates a bankSystem object named acc1 which aks for user input(id,first,last)
 	//then it executes the start function
-	string,id,fn,ln;
+	string id,fn,ln;
 	cout<<"Enter your bank ID: ";
 	cin>>id;
 	
