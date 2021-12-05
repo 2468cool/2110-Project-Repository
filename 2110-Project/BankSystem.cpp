@@ -227,20 +227,28 @@ void BankSystem::start()
 		{
 		case 1:
 			AddCheckingDialog();
+			break;
 		case 2:
 			RemoveCheckingDialog();
+			break;
 		case 3:
 			DepositCheckingDialog();
+			break;
 		case 4:
 			WithdrawCheckingDialog();
+			break;
 		case 5:
 			AddSavingDialog();
+			break;
 		case 6:
 			RemoveSavingDialog();
+			break;	
 		case 7:
 			DepositSavingDialog();
+			break;
 		case 8:
 			TransferDialog();
+			break;
 		case 9:
 			exit(-99);
 				
