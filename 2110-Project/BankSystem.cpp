@@ -5,6 +5,7 @@
 #include <string> // For string data type
 #include <vector> // Allows the use of the 'log'variable
 #include "BankSystem.h"
+#include "Client.cpp"
 using namespace std;
 
 // These functions rely on the fact that SavingAccount and
@@ -253,8 +254,8 @@ void BankSystem::start()
 			exit(-99);
 				
 		default: 
-			cout<<" Invalid Choice";
-			break;
+			cout<<" Invalid Choice.";
+			start();
 		}
 
 	}
@@ -263,5 +264,6 @@ void BankSystem::start()
 //Double check to make sure I did this correctly. Thanks.
 BankSystem::BankSystem(std::string i, std::string fn, std::string ln)
 {
-	Client::Client(i, fn, ln);
+	oneClient.setName(fn, ln);
+	oneClient.setID(stoi(i));
 }
