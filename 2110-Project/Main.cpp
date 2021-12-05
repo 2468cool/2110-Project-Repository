@@ -59,7 +59,7 @@ int main()
 	cin>>ln;
 	cout<<endl<<endl;
 	
-	BankSystem acc1("123",fn,ln);
+	BankSystem acc1(id,fn,ln);
 	
 	//infinite while loop that executes the menu until the user exits by choosing '9'
 	while(true)	
