@@ -59,7 +59,12 @@ int main()
 	cin>>ln;
 	cout<<endl<<endl;
 	
-	BankSystem acc1("123","Billy","Joe");
-	acc1.start();
+	BankSystem acc1("123",fn,ln);
+	
+	while(true)	
+	{
+		acc1.start();
+	}
+	
 
 }
