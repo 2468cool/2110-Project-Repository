@@ -22,37 +22,39 @@ using namespace std;
 void BankSystem::AddCheckingDialog()
 {
 	if (oneClient.checking != nullptr)
-	{
-		cout << "The client already has a checking account." << endl;
-		log.push_back("Invalid attempt to overwrite a checking account.");
-		start();
-	}
-	else
-	{
-		int amm;
-		cout << "Please enter a starting balance: ";
-		cin >> amm;
-		oneClient.checking = new CheckingAccount(amm);
-		log.push_back("Checking account successfuly created");
-		start();
-	}
+		{
+			cout << "The client already has a checking account." << endl;
+			log.push_back("Invalid attempt to overwrite a checking account.");
+			
+		}
+		else
+		{
+			int amm;
+			cout << "Please enter a starting balance: ";
+			cin >> amm;
+			oneClient.checking = new CheckingAccount(amm);
+			log.push_back("Checking account successfuly created");
+			
+		}
 }
 
 // Deletes the CheckingAccount object
 // If none exists, tell the user no account currently exists and return to menu
 void BankSystem::RemoveCheckingDialog()
 {
-	if (oneClient.checking != nullptr)
-	{
-		log.push_back("The client does not have a checking account.");
-		oneClient.checking = nullptr;
-		start();
-	}
-	else
-	{
-		log.push_back("Invalid attempts to remove a non-existing checking account.");
-		start();
-	}
+	if (oneClient.checking == nullptr)
+		{
+			cout << "The client does not have a checking account" << endl;
+			log.push_back("Invalid attempt to remove a non-existing checking account.");
+			
+		}
+		else
+		{
+			cout << "Checking account was removed" << endl;
+			oneClient.checking = nullptr;
+			log.push_back("The client does not have a checking account.");
+			
+		}
 	
 }
 
@@ -62,20 +64,22 @@ void BankSystem::RemoveCheckingDialog()
 // Write to log
 void BankSystem::DepositCheckingDialog()
 {
-	if (oneClient.checking!= nullptr)
-	{
-		double amount;
-		cout << "How much would you like to deposit?: ";
-		cin >> amount;
-		oneClient.checking->deposit(amount);
-		log.push_back("$[amount] successfully deposited in checking account.");
-		start();
-	}
-	else
-	{
-		log.push_back("Invalid attempt to deposit non-exisiting checking account.");
-		start();
-	}
+	if (oneClient.checking == nullptr)
+		{
+			cout << "The client does not have a checking account" << endl;
+			log.push_back("Invalid attempt to deposit non-exisiting checking account.");
+			
+			
+		}
+		else
+		{
+			string amount;
+			cout << "How much would you like to deposit?: ";
+			cin >> amount;
+			oneClient.checking->deposit(stof(amount));
+			cout << amount + " successfully deposited in checking account.";
+			log.push_back("$"+amount + " successfully deposited in checking account.");
+		}
 }
 
 // Ask the user how much they want to withdraw, make sure that it does not go below zero.
@@ -84,20 +88,21 @@ void BankSystem::DepositCheckingDialog()
 // Write to log
 void BankSystem::WithdrawCheckingDialog()
 {
-	if (oneClient.checking!= nullptr)
-	{
-		double amount;
-		cout << "How much would you like to deposit?: ";
-		cin >> amount;
-		oneClient.checking->withdraw(amount);
-		log.push_back("$[amount] successfully withdrawn from checking account.");
-		start();
-	}
-	else
-	{
-		log.push_back("Invalid attempt to withdraw from a non-exisiting checking account.");
-		start();
-	}
+	
+		if (oneClient.checking == nullptr)
+		{
+			cout << "The client does not have a checking account" << endl;
+			log.push_back("Invalid attempt to withdraw from a non-exisiting checking account.");
+			
+		}
+		else
+		{
+			string amount;
+			cout << "How much would you like to withdraw?: ";
+			cin >> amount;
+			oneClient.checking->withdraw(stof(amount));
+			log.push_back("$" + amount + " successfully withdrawn in checking account.");
+		}
 }
 
 // If the pointer for Saving account is not initialized, have the pointer
@@ -107,40 +112,40 @@ void BankSystem::WithdrawCheckingDialog()
 void BankSystem::AddSavingDialog()
 {
 	if (oneClient.saving != nullptr)
-	{
-		cout << "The client already has a saving account." << endl;
-		log.push_back("Invalid attempt to overwrite a saving account.");
-		start();
-	}
-	else
-	{
-		int amm;
-		int rate;
-		cout << "Please enter a starting balance: ";
-		cin >> amm;
-		cout << "Please enter a savings rate: ";
-		cin >> rate;
-		oneClient.saving = new SavingAccount(amm, rate);
-		log.push_back("Saving account successfuly created");
-		start();
-	}
+		{
+			cout << "The client already has a saving account." << endl;
+			log.push_back("Invalid attempt to overwrite a saving account.");
+			
+		}
+		else
+		{
+			int amm;
+			float rate;
+			cout << "Please enter a starting balance: ";
+			cin >> amm;
+			cout << "Please enter a savings rate: ";
+			cin >> rate;
+			oneClient.saving = new SavingAccount(amm, rate);
+			log.push_back("Saving account successfuly created");
+		}
 }
 
 // Deletes the SavingAccount object. Write to log
 // If none exists, tell the user no account currently exists and return to menu. Write to log
 void BankSystem::RemoveSavingDialog()
 {
-	if (oneClient.saving != nullptr)
-	{
-		log.push_back("The client does not have a saving account.");
-		oneClient.saving = nullptr;
-		start();
-	}
-	else
-	{
-		log.push_back("Invalid attempts to remove a non-existing saving account.");
-		start();
-	}
+	if (oneClient.saving == nullptr)
+		{
+			cout << "The client does not have a saving account" << endl;
+			log.push_back("Invalid attempts to remove a non-existing saving account.");
+			
+		}
+		else
+		{
+			cout << "Savings account was removed" << endl;
+			log.push_back("Saving account successfully removed.");
+			oneClient.saving = nullptr;
+		}
 }
 
 // Asks user how much they would like to deposit into the account.
@@ -149,22 +154,20 @@ void BankSystem::RemoveSavingDialog()
 // Write to log
 void BankSystem::DepositSavingDialog()
 {
-	if (oneClient.saving != nullptr)
-	{
-		double amount;
-		cout << "How much would you like to deposit?: ";
-		cin >> amount;
-		oneClient.saving->deposit(amount);
-		//fix 146 to make amount work properly
-		//make [amount] display actual number;
-		log.push_back("$[amount] successfully deposited in saving account." );
-		start();
-	}
-	else
-	{
-		log.push_back("The client does not have a saving account");
-		start();
-	}
+		if (oneClient.saving == nullptr)
+		{
+			cout << "The client does not have a savings account" << endl;
+			log.push_back("Invalid attempt to deposit in a non-existing saving account.");
+			
+		}
+		else
+		{
+			string amount;
+			cout << "How much would you like to deposit?: ";
+			cin >> amount;
+			oneClient.saving->deposit(stof(amount));
+			log.push_back("$" + amount + " successfully deposited in saving account.");
+		}	
 	
 }
 
@@ -176,30 +179,27 @@ void BankSystem::DepositSavingDialog()
 // Check saving account first, then check Checking Account
 void BankSystem::TransferDialog()
 {
-	if (oneClient.saving == nullptr)
-	{
-		cout << "The client does not have a saving account." << endl;
-		log.push_back("Invalid attempt to use a non-existing saving account.");
-		start();
-	}
-	else if (oneClient.checking == nullptr)
-	{
-		cout << "The client does not have a saving account." << endl;
-		log.push_back("Invalid attempt to use a non-existing checking account.");
-		start();
-	}
-	else
-	{
-		double amount;
-		cout<<"Enter an amount to transfer: ";
-		cin>>amount;
-		
-		oneClient.saving->transfer(oneClient.checking,amount);
-		oneClient.checking->deposit(amount);
-		log.push_back("$[amount] successfully transferred from saving to checking account." );
-		start();
-		
-	}
+		if (oneClient.saving == nullptr)
+		{
+			cout << "The client does not have a saving account." << endl;
+			log.push_back("Invalid attempt to use a non-existing saving account.");
+		}
+		else if (oneClient.checking == nullptr)
+		{
+			cout << "The client does not have a saving account." << endl;
+			log.push_back("Invalid attempt to use a non-existing checking account.");
+		}
+		else
+		{
+			string amount;
+			cout << "Enter an amount to transfer: ";
+			cin >> amount;
+
+			oneClient.saving->transfer(oneClient.checking, stof(amount));
+			oneClient.checking->deposit(stof(amount));
+			log.push_back("$" + amount + " successfully transferred from saving to checking account.");
+
+		}
 }
 
 // While loop to access all functions
@@ -251,17 +251,17 @@ void BankSystem::start()
 			TransferDialog();
 			break;
 		case 9:
-			exit(-99);
+			break;
 				
 		default: 
-			cout<<" Invalid Choice.";
+			cout<<" Invalid Choice.Choose again.";
 			start();
+			break;
 		}
 
 	}
 }
 
-//Double check to make sure I did this correctly. Thanks.
 BankSystem::BankSystem(std::string i, std::string fn, std::string ln)
 {
 	oneClient.setName(fn, ln);
