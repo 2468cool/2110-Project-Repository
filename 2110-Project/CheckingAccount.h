@@ -15,4 +15,6 @@ class CheckingAccount : public Account
 public:
 	void withdraw(float amount);
 	CheckingAccount(float amount);
+	float getBalance() const;
+	void deposit(float amount);
 };

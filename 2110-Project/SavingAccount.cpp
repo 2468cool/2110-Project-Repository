@@ -21,7 +21,7 @@ float SavingAccount::getSavingRate() const
 
 // Balance cannot go below 0
 // Moves the 'amount' from saving account to checking account
-void SavingAccount::transfer(CheckingAccount& checkingAcc, float amount)
+void SavingAccount::transfer(CheckingAccount* checkingAcc, float amount)
 {
 	string errorMessage = "It cannot withdraw an amount greater than the balance. No changes were done to the balance.";
 
@@ -36,7 +36,7 @@ void SavingAccount::transfer(CheckingAccount& checkingAcc, float amount)
 		else
 		{
 			balance = balance - amount;
-			checkingAcc.deposit(amount);
+			checkingAcc->deposit(amount);
 		}
 	}
 	catch (float amt) {

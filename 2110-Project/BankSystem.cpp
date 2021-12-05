@@ -193,8 +193,8 @@ void BankSystem::TransferDialog()
 		cout<<"Enter an amount to transfer: ";
 		cin>>amount;
 		
-		oneClient.saving->withdraw(amount);
-		oneClient.checking->deposiut(amount);
+		oneClient.saving->transfer(oneClient.checking,amount);
+		oneClient.checking->deposit(amount);
 		log.push_back("$[amount] successfully transferred from saving to checking account." );
 		start();
 		

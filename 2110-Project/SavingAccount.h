@@ -16,6 +16,8 @@ private:
 public:
 	void setSavingRate(float rate);
 	float getSavingRate() const;
-	void transfer(CheckingAccount& checkingAcc, float amount);
+	void transfer(CheckingAccount* checkingAcc, float amount);
 	SavingAccount(float amount, float rate);
+	float getBalance() const;
+	void deposit(float amount);
 };

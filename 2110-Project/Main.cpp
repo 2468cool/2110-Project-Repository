@@ -28,8 +28,6 @@ int main()
 	//string s;
 	//char c;
 
-	//masudur test dec 4
-
 	//Test commit from clones area
 	// Post-Privatization test commit
 
@@ -44,12 +42,6 @@ int main()
 	// Write to screen
 	cout << "Hello World!" << endl;
 	cout << "Doing something useful here!" << endl;
-
-	CheckingAccount acc(500);
-
-	 cout << acc.getBalance() << endl;
-	 acc.withdraw(50);
-	 cout << acc.getBalance() << endl;
 
 	// Show application close
 	cout << "\nEnd of my Application" << endl;

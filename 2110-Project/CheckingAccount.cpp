@@ -13,6 +13,7 @@ using namespace std; // So "std::cout" may be abbreviated to "cout"
 
 void CheckingAccount::withdraw(float amount)
 {
+	/*
 	if ((balance - amount) < 0)
 	{
 		cout << "This action cannot be performed. Action would result in negative balance."
@@ -22,7 +23,24 @@ void CheckingAccount::withdraw(float amount)
 	{
 		balance = getBalance() - amount;
 	}
-    
+    */
+   string errorMessage = "It cannot withdraw an amount greater than the balance. No changes were done to the balance.";
+   	try {
+		if (amount > balance) {
+			throw errorMessage;
+		}
+		 else if ((balance - amount) < 0)
+		{
+			cout << "This action cannot be performed. Balance would go below zero." << endl;
+		}
+		else
+		{
+			balance = getBalance() - amount;
+		}
+	}
+	catch (float amt) {
+		cout << "Transfer amount " << amt << " is greater than the account balance of " << balance;
+	}
 }
 
 // Initializes blanace with the amount it takes in

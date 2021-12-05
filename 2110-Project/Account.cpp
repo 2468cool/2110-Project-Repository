@@ -6,7 +6,8 @@
 #include <vector> // Allows the use of the 'log'variable
 #include "Account.h"
 using namespace std; // So "std::cout" may be abbreviated to "cout"
-
+ 
+ /*
 float Account::getBalance() const
 {
 	return balance;
@@ -16,3 +17,4 @@ void Account::deposit(float amount)
 {
 	balance = balance + amount;
 }
+*/
