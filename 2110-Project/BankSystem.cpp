@@ -263,6 +263,5 @@ void BankSystem::start()
 //Double check to make sure I did this correctly. Thanks.
 BankSystem::BankSystem(std::string i, std::string fn, std::string ln)
 {
-	setID(stoi(i));
-	setName(fn,ln);
+	Client::Client(i, fn, ln);
 }
