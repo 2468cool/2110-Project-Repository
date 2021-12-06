@@ -5,7 +5,6 @@
 #include <string> // For string data type
 #include <vector> // Allows the use of the 'log'variable
 #include "BankSystem.h"
-#include "Client.cpp"
 using namespace std;
 
 // These functions rely on the fact that SavingAccount and
@@ -43,18 +42,19 @@ void BankSystem::AddCheckingDialog()
 void BankSystem::RemoveCheckingDialog()
 {
 	if (oneClient.checking == nullptr)
-		{
-			cout << "The client does not have a checking account" << endl;
-			log.push_back("Invalid attempt to remove a non-existing checking account.");
+	{
+		cout << "The client does not have a checking account" << endl;
+		log.push_back("Invalid attempt to remove a non-existing checking account.");
 			
-		}
-		else
-		{
-			cout << "Checking account was removed" << endl;
-			oneClient.checking = nullptr;
-			log.push_back("The client does not have a checking account.");
+	}
+	else
+	{
+		cout << "Checking account was removed" << endl;
+		delete oneClient.checking;
+		oneClient.checking = nullptr;
+		log.push_back("The client does not have a checking account.");
 			
-		}
+	}
 	
 }
 
@@ -144,6 +144,7 @@ void BankSystem::RemoveSavingDialog()
 		{
 			cout << "Savings account was removed" << endl;
 			log.push_back("Saving account successfully removed.");
+			delete oneClient.saving;
 			oneClient.saving = nullptr;
 		}
 }
@@ -206,10 +207,11 @@ void BankSystem::TransferDialog()
 // Might be best to use switch statements to activate an option
 void BankSystem::start()
 {
+	int bankSystemSize;
 	int option = 0;
 	while (option !=9)
 	{
-		cout << "=Menu=" << endl;
+		cout << "\n=Menu=" << endl;
 		cout<<"1. Add a Checking Account"<<endl;
 		cout<<"2. Remove checking Account"<<endl;
 		cout<<"3. Deposit into Checking Account" <<endl;
@@ -251,13 +253,14 @@ void BankSystem::start()
 			TransferDialog();
 			break;
 		case 9:
-			break;
-			int bankSystemSize = log.size();
+			cout << "\nFull User Log" << endl;
+			bankSystemSize = log.size();
 			for (int i = 0; i < bankSystemSize; i++)
-				cout << log.at(i) << ' ';
+				cout << log.at(i) << endl;
+			cout << endl;
+			break;
 		default: 
-			cout<< " Invalid Choice. Choose again.";
-			start();
+			cout<< "\nInvalid Choice. Choose again." << endl;
 			break;
 		}
 

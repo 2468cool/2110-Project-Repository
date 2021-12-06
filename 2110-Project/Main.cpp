@@ -3,11 +3,13 @@
 // Title:      CSC 2110 Project
 // Course:     CSC 2110
 // Project #:  Project 1
-// Authors:     <name>
-// Date:       <date>
+// Authors:    Benjamin Pietna, Masudur Rahman, Angjelo Mana, Karim Soliman, Zachary Weaver
+// Date:       12/5/21
 // Description:
-//   <brief description of application including its inputs,
-// processing, and outputs>
+//   Program asks a user to create a bank account. Then the program will display
+//	a menu for the user to cycle through. Each option adds a log depending on what
+//	the client has done. When the client exits the program it will display the full log
+//	of the user's actions.
 //
 //==========================================================
 #include <cstdlib> // For several general-purpose functions
@@ -27,35 +29,27 @@ int main()
 	// Post-Privatization test commit
 
 	// Show application header
-	cout << "Welcome to my Application!" << endl;
-	cout << "--------------------------" << endl << endl;
+	cout << "Start of the Bank System!" << endl;
+	cout << "-------------------------" << endl << endl;
 
-	
-
-	// Write to screen
-	cout << "Hello World!" << endl;
-	cout << "Doing something useful here!" << endl;
-
-	// Show application close
-	cout << "\nEnd of my Application" << endl;
-	
 	//Creates a bankSystem object named acc1 which aks for user input(id,first,last)
 	//then it executes the start function
-	string id,fn,ln;
-	cout<<"Enter your bank ID: ";
-	cin>>id;
-	
-	cout<<endl<<"Enter your first name: ";
-	cin>>fn;
-	
-	cout<<endl<<"Enter your last name: ";
-	cin>>ln;
-	cout<<endl<<endl;
-	
-	BankSystem acc1(id,fn,ln);
-	
+	string id, fn, ln;
+	cout << "Enter your bank ID: ";
+	cin >> id;
+
+	cout << endl << "Enter your first name: ";
+	cin >> fn;
+
+	cout << endl << "Enter your last name: ";
+	cin >> ln;
+	cout << endl << endl;
+
+	BankSystem acc1(id, fn, ln);
+
 	acc1.start();
 
-	
 
+	// Show application close
+	cout << "\nEnd of the Bank System!" << endl;
 }

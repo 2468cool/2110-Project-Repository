@@ -39,8 +39,8 @@ void SavingAccount::transfer(CheckingAccount* checkingAcc, float amount)
 			checkingAcc->deposit(amount);
 		}
 	}
-	catch (float amt) {
-		cout << "Transfer amount " << amt << " is greater than the account balance of " << balance;
+	catch(string) {
+		cout << errorMessage << endl;
 	}
 }
 
@@ -51,12 +51,12 @@ SavingAccount::SavingAccount(float amount, float rate)
 	savingRate = rate;
 }
 
-float Account::getBalance() const
+float SavingAccount::getBalance() const
 {
 	return balance;
 }
 
-void Account::deposit(float amount)
+void SavingAccount::deposit(float amount)
 {
 	balance = balance + amount;
 }

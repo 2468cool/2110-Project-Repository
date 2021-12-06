@@ -38,8 +38,8 @@ void CheckingAccount::withdraw(float amount)
 			balance = getBalance() - amount;
 		}
 	}
-	catch (float amt) {
-		cout << "Transfer amount " << amt << " is greater than the account balance of " << balance;
+	catch (string) {
+		cout << errorMessage << endl;
 	}
 }
 
@@ -49,12 +49,12 @@ CheckingAccount::CheckingAccount(float amount)
     balance = amount;
 }
 
-float Account::getBalance() const
+float CheckingAccount::getBalance() const
 {
 	return balance;
 }
 
-void Account::deposit(float amount)
+void CheckingAccount::deposit(float amount)
 {
 	balance = balance + amount;
 }
