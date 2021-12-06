@@ -22,12 +22,7 @@ using namespace std; // So "std::cout" may be abbreviated to "cout"
 int main()
 {
 
-	// Declare variables
-	//int i;
-	//double r;
-	//string s;
-	//char c;
-
+	
 	//Test commit from clones area
 	// Post-Privatization test commit
 
@@ -35,9 +30,7 @@ int main()
 	cout << "Welcome to my Application!" << endl;
 	cout << "--------------------------" << endl << endl;
 
-	// Read from keyboard
-	//cout << "Enter a number: ";
-	//cin >> i;
+	
 
 	// Write to screen
 	cout << "Hello World!" << endl;

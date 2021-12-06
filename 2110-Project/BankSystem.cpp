@@ -252,9 +252,11 @@ void BankSystem::start()
 			break;
 		case 9:
 			break;
-				
+			int bankSystemSize = log.size();
+			for (int i = 0; i < bankSystemSize; i++)
+				cout << log.at(i) << ' ';
 		default: 
-			cout<<" Invalid Choice.Choose again.";
+			cout<< " Invalid Choice. Choose again.";
 			start();
 			break;
 		}
